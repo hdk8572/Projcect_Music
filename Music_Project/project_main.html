@@ -6,39 +6,75 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/project_main.css">
     <style>
+
         body {
-        width: 950px;
+        background-image: linear-gradient(to top, #150050 0%, #000000 100%);
+        background-size: cover;
+        background-position: center;
+        width: 1200px;
+        margin: 0 auto;
+        color: white;
         }
 
         #header {
-        background: #ffff99;
+        /* background: #ffff99; */
         height: 70px;
+        position: relative;
         }
 
         #maincontent {
-        background: #9999ff;
+        /* background: #9999ff; */
         height: 600px;
         }
-
+        #playlist {
+            /* background: blanchedalmond; */
+            height: 350px;
+        }
+        #profile {
+            /* background: pink; */
+            width: 200px;
+            height: 300px;
+            padding: 0px;
+            float: left;
+            
+        }
+        #comment {
+            /* background: #def186; */
+            width: 550px;
+            height: 300px;
+            padding: 0px;
+            float: left;
+        }
+        #aside {
+            /* background: #ff6363; */
+            width: 450px;
+            height: 300px;
+            float: left;
+        }
         #footer {
-        background: #ffcc99;
-        height: 80px;
+        /* background: #ffcc99; */
+        height: 217px;
         clear: left;
         }
-        #header {
-            position: relative;
-        }
+
         img {
             position: absolute;
             display: inline-block;
             left: 15px;
             bottom: 10px;
         }
-        header #nav {
+        #nav {
             position: absolute;
             right: 15px;
             bottom: 25px;
+            text-decoration: none;
         }
+        #nav a {
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -51,13 +87,20 @@
                         <td><a href="#">검색</a></td>
                         <td><a href="#">내 플레이리스트</a></td>
                         <td><a href="#">다운로드</a></td>
+                        <td><a href="#">고객센터</a></td>
                     </tr>
                 </table>
             </div>
         </header>
     </div>
     </div>
-    <div id="maincontent">메인</div>
+    <div id="maincontent">
+        <div id="playlist">플레이리스트+그림1</div>
+        <p>asdasd</p>
+        <div id="profile">프로필</div>
+        <div id="comment">댓글</div>
+        <div id="aside">사이드바</div>
+    </div>
     <div id="footer">풋터</div>
 </body>
 </html>
