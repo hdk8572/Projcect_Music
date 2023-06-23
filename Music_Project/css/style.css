@@ -57,13 +57,13 @@ div img {
 .title img {
     position: absolute;
     bottom: -2000%;
-    left: 700px;
+    left: 470px;
 }
 
 
 .title h1 {
     position: absolute;
-    left: 105%;
+    left: 50%;
     width: 300px;
     font-size: 70px;
     color: #fff;
@@ -76,7 +76,7 @@ div img {
     padding: 20px;
     margin-left: 15px;
     top: 250px;
-    left: 250px;
+    left: 130px;
     color: #fff;
 
     text-align: center;
