@@ -210,23 +210,10 @@
         }
 
         #maincontent #comment #section1 {
-            width: 375px;
+            display: inline-block;
+            width: 840px;
             height: 300px;
-            /* background: rgb(255, 0, 212); */
         }
-
-        #maincontent #comment #section1 #title_section1 {
-            width: 375px;
-            height: 80px;
-            /* background: rgb(47, 0, 255); */
-        }
-
-        #maincontent #comment #section2 {
-            width: 475px;
-            height: 300px;
-            /* background: brown; */
-        }
-
         #playbar {
             width: 470px;
             height: 100px;
@@ -295,12 +282,12 @@
             
         }
         .carousel-item #lyric_album #lyric::-webkit-scrollbar {
-            width: 10px;
+            width: 5px;
         }
         .carousel-item #lyric_album #lyric::-webkit-scrollbar-thumb {
-            background: #fff;
-            background-clip: padding-box;
+            background: rgba(255,255,255,0.1);
             border: 0px solid transparent;
+            background-clip: padding-box;
             border-radius: 10px;
         }
         /*  3번 쨰 슬라이드 */
@@ -329,12 +316,12 @@
             
         }
         .carousel-item #thirdy_comment_album #comment_box #comment_user::-webkit-scrollbar {
-            width: 10px;
+            width: 5px;
         }
         .carousel-item #thirdy_comment_album #comment_box #comment_user::-webkit-scrollbar-thumb {
-            background: #fff;
-            background-clip: padding-box;
+            background: rgba(255,255,255,0.1);
             border: 0px solid transparent;
+            background-clip: padding-box;
             border-radius: 10px;
         }
         .carousel-item #thirdy_comment_album #comment_box  {
@@ -347,7 +334,6 @@
             border: 1px solid #ccc;
             padding: 10px;
             width: 490px;
-            
         }
         
         .comment-header {
@@ -398,10 +384,91 @@
             font-size: 12px;
             color: #888;
         }
-
-
-
+        #maincontent #comment #list {
+            width: 100%;
+            height: 300px;
+            /* background-color: violet; */
+            display: flex;
+            overflow-y: scroll;
+        }
+        #maincontent #comment #list::-webkit-scrollbar {
+            width: 5px;
+        }
+        #maincontent #comment #list::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.1);
+            border: 0px solid transparent;
+            background-clip: padding-box;
+            border-radius: 10px;
+        }
+        #maincontent #comment #list td,th {
+            width: calc(850px/5);
+        }
+        #maincontent #comment #list th {
+            text-align: center;
+        }
+        #maincontent #comment #list td {
+            height: calc(264.48px / 5);
+            font-size: 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        #maincontent #comment #list td a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #fff;
         
+        }
+        /* Aside */
+        #aside #playlist_aside {
+            position: fixed;
+            width: 150px;
+            height: 300px;
+            overflow-y: scroll;
+        }
+        #aside #playlist_aside::-webkit-scrollbar {
+            width: 5px;
+        }
+        #aside #playlist_aside::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.1);
+            border: 0px solid transparent;
+            background-clip: padding-box;
+            border-radius: 10px;
+        }
+        #aside th {
+            height: 30px;
+        }
+        #aside tr td {
+            height: calc(270px / 5);
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        #aside tr td p {
+            text-align: left ;
+        }
+
+        #aside #info_song :first-child{
+            font-size: 12px;
+        }
+        #aside #info_song :last-child{
+            font-size: 10px;
+        }
+        #aside #info_song a {
+            float: right;
+            margin-right: 10px;
+        }
+        /* Footer */
+        #footer {
+            padding: 20px 150px;
+        }
+        #footer #album_wrap {
+            text-align: center;
+        }
+        #footer #album_wrap img {
+            text-align: center;
+            margin: 0 30px;
+        }
+        #footer #album_wrap img a p {
+            font-size: 2px;
+        }
     </style>
 </head>
 <body>
@@ -578,18 +645,169 @@
             </div>
         </div>
         <div id="comment">
-            <div id="section1">
-                <div id="title_section1">
+            <div id="list">
+                <!-- <div id="title_section1">
                     asd
-                </div>
-            </div>
-            <div id="section2">
-                asdads
+                </div> -->
+                <table>
+                    <tr id="menu_list">
+                        <th></th>
+                        <th>노래</th>
+                        <th></th>
+                        <th>아티스트</th>
+                        <th>앨범</th>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="Resource/sza_album_1.jpg" width="35px"><a href="#">Ghost in the Machine(feat. Phoebe Bridgers)</a></td>
+                        <td><a href="#">SZA</a></td>
+                        <td><a href="#">SOS</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="Resource/sza_album_1.jpg" width="35px"><a href="#">Open Arms(feat. Travis Scott)</a></td>
+                        <td><a href="#">SZA</a></td>
+                        <td><a href="#">SOS</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="Resource/sza_album_1.jpg" width="35px"><a href="#">Used(feat. Don Toliver)</a></td>
+                        <td><a href="#">SZA</a></td>
+                        <td><a href="#">SOS</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="Resource/sza_album_1.jpg" width="35px"><a href="#">Low</a></td>
+                        <td><a href="#">SZA</a></td>
+                        <td><a href="#">SOS</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="Resource/sza_album_1.jpg" width="35px"><a href="#">Snooze</a></td>
+                        <td><a href="#">SZA</a></td>
+                        <td><a href="#">SOS</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="Resource/sza_album_1.jpg" width="35px"><a href="#">Far</a></td>
+                        <td><a href="#">SZA</a></td>
+                        <td><a href="#">SOS</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="Resource/sza_album_1.jpg" width="35px"><a href="#">Notice</a></td>
+                        <td><a href="#">SZA</a></td>
+                        <td><a href="#">SOS</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="Resource/sza_album_1.jpg" width="35px"><a href="#">Nobody Gets me</a></td>
+                        <td><a href="#">SZA</a></td>
+                        <td><a href="#">SOS</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="Resource/sza_album_1.jpg" width="35px"><a href="#">Shirts</a></td>
+                        <td><a href="#">SZA</a></td>
+                        <td><a href="#">SOS</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="Resource/sza_album_1.jpg" width="35px"><a href="#">Good days</a></td>
+                        <td><a href="#">SZA</a></td>
+                        <td><a href="#">SOS</a></td>
+                    </tr>
+                    
+                </table>
             </div>
         </div>
-        <div id="aside">사이드바</div>
+        <div id="aside">
+            <div id="playlist_aside">
+                <table>
+                    <tr>
+                        <th colspan="4">Playlist</th>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="Resource/joji_album_1.webp" width="35px"></a></td>
+                        <td colspan="3">
+                            <div id="info_song">
+                                <p>Demons</p>
+                                <p>Joji
+                                    <a href="#">
+                                        <img src="Resource/play.png" width="15px">
+                                    </a>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="Resource/Joji_-_Smithereens.png" width="35px"></a></td>
+                        <td colspan="3">
+                            <div id="info_song">
+                                <p>Glimpse of Us</p>
+                                <p>Joji
+                                    <a href="#">
+                                        <img src="Resource/play.png" width="15px">
+                                    </a>                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="Resource/The Weekend_Dawn FM.png" width="35px"></a></td>
+                        <td colspan="3">
+                            <div id="info_song">
+                                <p>Out of Time</p>
+                                <p>The Weekend
+                                    <a href="#">
+                                        <img src="Resource/play.png" width="15px">
+                                    </a>                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="Resource/Russ_Psycho.jpg" width="35px"></a></td>
+                        <td colspan="3">
+                            <div id="info_song">
+                                <p>Psycho, Pt. 2</p>
+                                <p>Russ
+                                    <a href="#">
+                                        <img src="Resource/play.png" width="15px">
+                                    </a>                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="Resource/sza_album_1.jpg" width="35px"></a></td>
+                        <td colspan="3">
+                            <div id="info_song">
+                                <p>Low</p>
+                                <p>SZA
+                                    <a href="#">
+                                        <img src="Resource/play.png" width="15px">
+                                    </a>                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="Resource/tyla yaweh.jpg" width="35px"></a></td>
+                        <td colspan="3">
+                            <div id="info_song">
+                                <p>High Right Now</p>
+                                <p>Tyla Yaweh
+                                    <a href="#">
+                                        <img src="Resource/play.png" width="15px">
+                                    </a>                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
-    <div id="footer">풋터</div>
+    <div id="footer">
+        <div id="album_wrap">
+            <div id="album">
+                <a href="#"><img src="Resource/SZA_Kill_Bill_1.png" width="150px" height="150px">
+                    <p>Kill Bill</p>
+                </a>
+                <a href="#"><img src="Resource/sza_album_1.jpg" width="150px" height="150px"></a>
+                <a href="#"><img src="Resource/SZA_Ctrl_1png.png" width="150px" height="150px"></a>
+                <a href="#"><img src="Resource/SZA_Black_Panther.jpg" width="150px" height="150px"></a>
+            </div>
+        </div>
+
+
+    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
