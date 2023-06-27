@@ -313,22 +313,60 @@
             width: 490px;
             height: 48px;
             line-height: 48px;
+        }
+        .carousel-item #thirdy_comment_album #wrap_comment_box {
+            background-color: cadetblue;
+            padding: 10px, 50px;
+            width:490px;
+            height:300px;
             
         }
-        .carousel-item #thirdy_comment_album #comment_box #comment_user::-webkit-scrollbar {
+        .carousel-item #thirdy_comment_album #wrap_comment_box table {
+            /* background-color: blue; */
+            width: 490px;
+        }
+        .carousel-item #thirdy_comment_album #wrap_comment_box table th:first-child{
+            /* background-color: rgba(247, 41, 229, 0.993); */
+            width: 50px;
+            text-align: center;
+            padding-left: 100px;
+        }
+        .carousel-item #thirdy_comment_album #wrap_comment_box table th:nth-child(2){
+            /* background-color: red; */
+            width: 440px;
+            padding: 0px;
+            padding-left: 20px;
+        }
+        .carousel-item #thirdy_comment_album #wrap_comment_box table td{
+            /* background-color: red; */
+            width: 440px;
+            padding: 0px;
+            padding-left: 20px;
+        }
+        
+
+
+
+
+
+        .carousel-item #thirdy_comment_album #wrap_comment_box textarea {
+            resize: none;
+            width: 90%;
+        }
+        .carousel-item #thirdy_comment_album #wrap_comment_box .btn_comment {
+            width: 10%;
+            font-size: 1px;
+        }
+        .carousel-item #thirdy_comment_album #wrap_comment_box #comment_user::-webkit-scrollbar {
             width: 5px;
         }
-        .carousel-item #thirdy_comment_album #comment_box #comment_user::-webkit-scrollbar-thumb {
+        .carousel-item #thirdy_comment_album #wrap_comment_box #comment_user::-webkit-scrollbar-thumb {
             background: rgba(255,255,255,0.1);
             border: 0px solid transparent;
             background-clip: padding-box;
             border-radius: 10px;
         }
-        .carousel-item #thirdy_comment_album #comment_box  {
-            border: 1px solid white;
-            width: 490px;
-            height: 300px;
-        }   
+
         /*  */
         .comment-container {
             border: 1px solid #ccc;
@@ -463,19 +501,13 @@
         #footer #album_wrap #album {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
         }
-        #footer #album_wrap #album .album_1 {
-            float: none;
-            border: 1px solid white;
-            width: 150px;
-            margin: 10px;
-        }
-        #footer #album_wrap #album .album_1 a {
+        #footer #album_wrap #album #album_1 a {
             display: block;
-            text-align: center;
             text-decoration: none;
             color: white;
+            margin-left: 30px;
+            margin-right: 30px;
         }
     </style>
 </head>
@@ -596,13 +628,70 @@
                                 <div id="menu_comment">
                                   <b>댓글</b>
                                 </div>
-                                <div id="comment_box">
-                                    <div class="comment-container">
-                                        <form class="comment-form">
-                                            <textarea placeholder="댓글을 입력하세요"></textarea>
-                                            <button type="submit">등록</button>
-                                        </form>
-                                    </div>
+                                <div id="wrap_comment_box">
+                                    <table>
+                                        <div id="list_comment">
+                                            <tr>
+                                                <th rowspan="2"><img src="https://dummyimage.com/40X40/6d8a85/0011ff.png"></th>
+                                                <th>dkdkdk_</th>
+                                            </tr>
+                                            <tr>
+                                                <td>좋아요~</td>
+                                            </tr>
+                                        </div>
+                                        <div id="list_comment">
+                                            <tr>
+                                                <th rowspan="2"><img src="https://dummyimage.com/40X40/6d8a85/0011ff.png"></th>
+                                                <th>1</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                            </tr>
+                                        </div>
+                                        <div id="list_comment">
+                                            <tr>
+                                                <th rowspan="2"><img src="https://dummyimage.com/40X40/6d8a85/0011ff.png"></th>
+                                                <th>1</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                            </tr>
+                                        </div>
+                                        <!-- <div id="list_comment">
+                                            <tr>
+                                                <th rowspan="2"><img src="https://dummyimage.com/40X40/6d8a85/0011ff.png"></th>
+                                                <th>dkdkdk_</th>
+                                            </tr>
+                                            <tr>
+                                                <td>좋아요~</td>
+                                            </tr>
+                                        </div>
+                                        <div id="list_comment">
+                                            <tr>
+                                                <th rowspan="2"><img src="https://dummyimage.com/40X40/6d8a85/0011ff.png"></th>
+                                                <th>dkdkdk_</th>
+                                            </tr>
+                                            <tr>
+                                                <td>좋아요~</td>
+                                            </tr>
+                                        </div>
+                                        <div id="list_comment">
+                                            <tr>
+                                                <th rowspan="2"><img src="https://dummyimage.com/40X40/6d8a85/0011ff.png"></th>
+                                                <th>dkdkdk_</th>
+                                            </tr>
+                                            <tr>
+                                                <td>좋아요~</td>
+                                            </tr>
+                                        </div> -->
+                                    </table>
+                                    <div id="insert_comment">
+
+                                    </div>    
+                                    <!-- <div class="comment_box">
+                                        <input type="button" name="name" value="등록">
+                                        <input type="text" name="name" value="" placeholder="리뷰를 남겨주세요.">
+                                    </div> -->
                                 </div>
                             </div>
                             <div id="cover_album"><img class="d-block w-100" src="Resource/sza_album_1.jpg"
@@ -654,10 +743,7 @@
         </div>
         <div id="comment">
             <div id="list">
-                <!-- <div id="title_section1">
-                    asd
-                </div> -->
-                <table>
+                <table id="playlist">
                     <tr id="menu_list">
                         <th></th>
                         <th>노래</th>
@@ -806,16 +892,16 @@
         <div id="album_wrap">
             <div id="album">
                 <div id="album_1">
-                    <a href="#"><img src="Resource/sza_album_1.jpg" width="150px" height="150px"><p>Kill Bill</p></a>
+                    <a href="#"><img src="Resource/SZA_Kill_Bill_1.png" width="150px" height="150px"><p>Kill Bill</p></a>
                 </div>
                 <div id="album_1">
-                    <a href="#"><img src="Resource/sza_album_1.jpg" width="150px" height="150px"><p>Kill Bill</p></a>
+                    <a href="#"><img src="Resource/sza_album_1.jpg" width="150px" height="150px"><p>SOS</p></a>
                 </div>
                 <div id="album_1">
-                    <a href="#"><img src="Resource/sza_album_1.jpg" width="150px" height="150px"><p>Kill Bill</p></a>
+                    <a href="#"><img src="Resource/SZA_Ctrl_1png.png" width="150px" height="150px"><p>Ctrl</p></a>
                 </div>
                 <div id="album_1">
-                    <a href="#"><img src="Resource/sza_album_1.jpg" width="150px" height="150px"><p>Kill Bill</p></a>
+                    <a href="#"><img src="Resource/SZA_Black_Panther.jpg" width="150px" height="150px"><p>All the Stars</p></a>
                 </div>
             </div>
         </div>
