@@ -268,7 +268,7 @@
         .carousel-item #lyric_album #lyric {
             overflow-y: scroll;
             width: 490px;
-            height: 302px;
+            height: 260px;
             margin-left: 50px;
             
         }
@@ -300,7 +300,7 @@
             margin-left: 180px;
         }
         .carousel-item #thirdy_comment_album #comment {
-            overflow-y: scroll;
+
             width: 490px;
             height: 302px;
             margin-left: 50px;
@@ -315,63 +315,69 @@
             line-height: 48px;
         }
         .carousel-item #thirdy_comment_album #wrap_comment_box {
-            background-color: cadetblue;
-            padding: 0px 100px;
-            
+            /* background-color: cadetblue; */
+            padding: 0px 60px;
             width:490px;
             height:300px;
-            
         }
-        /* .carousel-item #thirdy_comment_album #wrap_comment_box #list_comment {
-            height: calc(300px / 5);
-        } */
-        .carousel-item #thirdy_comment_album #wrap_comment_box table {
-            /* background-color: blue; */
-            overflow-y: scroll;
-            width: 490px;
+        .carousel-item #thirdy_comment_album #wrap_comment_box table tr a {
+            text-decoration: none;
+            color: white;
         }
-        .carousel-item #thirdy_comment_album #wrap_comment_box table th:first-child{
-            /* background-color: rgba(247, 41, 229, 0.993); */
-            width: 50px;
-            text-align: center;
-            /* padding-left: 100px; */
+
+
+        .carousel-item #thirdy_comment_album #wrap_comment_box #insert_comment {
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
-        .carousel-item #thirdy_comment_album #wrap_comment_box table th:nth-child(2){
-            /* background-color: red; */
-            width: 440px;
-            padding: 0px;
-            /* padding-left: 20px; */
-        }
-        .carousel-item #thirdy_comment_album #wrap_comment_box table td{
-            /* background-color: red; */
-            width: 440px;
-            padding: 0px;
-            /* padding-left: 20px; */
+
+        
+        .carousel-item #wrap_comment_box img {
+            display: block;
+            border-radius: 50%;
+            margin: 0 auto;
         }
         
-
-
-
-
-
-        .carousel-item #thirdy_comment_album #wrap_comment_box textarea {
-            resize: none;
-            width: 90%;
-        }
-        .carousel-item #thirdy_comment_album #wrap_comment_box .btn_comment {
-            width: 10%;
-            font-size: 1px;
-        }
-        .carousel-item #thirdy_comment_album #wrap_comment_box #comment_user::-webkit-scrollbar {
+        .carousel-item #wrap_comment_box #list_comment::-webkit-scrollbar {
             width: 5px;
         }
-        .carousel-item #thirdy_comment_album #wrap_comment_box #comment_user::-webkit-scrollbar-thumb {
+        .carousel-item #wrap_comment_box #list_comment::-webkit-scrollbar-thumb {
             background: rgba(255,255,255,0.1);
             border: 0px solid transparent;
             background-clip: padding-box;
             border-radius: 10px;
         }
 
+        .carousel-item #wrap_comment_box #insert_comment {
+            /* background: #f2f2f2; */
+        }
+        .carousel-item #wrap_comment_box #insert_comment input {
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            background: #fff;
+            color: #030303;
+            --yt-endpoint-hover-color: #030303;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border-radius: 8px;
+            border: none;
+            height: 36px;
+        }
+        #insert_comment .button {
+            width: 60px;
+            height: 25px;
+            background-color: #717171;
+            border: 1px solid transparent;
+            color: #f1f1f1;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
         /*  */
         .comment-container {
             border: 1px solid #ccc;
@@ -404,7 +410,6 @@
             display: inline-block;
             font-size: 14px;
             cursor: pointer;
-            
         }
         
         .comment-list {
@@ -634,65 +639,80 @@
                                   <b>댓글</b>
                                 </div>
                                 <div id="wrap_comment_box">
-                                    <table>
-                                        <div id="list_comment">
-                                            <tr>
-                                                <th rowspan="2"><img src="https://dummyimage.com/40X40/6d8a85/0011ff.png"></th>
-                                                <th>dkdkdk_</th>
-                                            </tr>
-                                            <tr>
-                                                <td>좋아요~</td>
-                                            </tr>
+                                    <div id="list_comment" style="height: 210px; overflow-y: scroll;">
+                                        <div id="scroll_list_comment">
+                                            <table style="height: 250px; overflow-y: scroll;">
+                                                <tr>
+                                                    <td style="width: 50px; height: 50px;"><a href="#"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></a></td>
+                                                    <td style="width: 300px; height: 50px;">
+                                                        <a href="#"><p style="font-size: 10px;">asdaasdasd</p></a>
+                                                        <p style="font-size: 16px;">굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 50px; height: 50px;"><a href="#"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></a></td>
+                                                    <td style="width: 300px; height: 50px;">
+                                                        <a href="#"><p style="font-size: 10px;">asdaasdasd</p></a>
+                                                        <p style="font-size: 16px;">굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 50px; height: 50px;"><a href="#"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></a></td>
+                                                    <td style="width: 300px; height: 50px;">
+                                                        <a href="#"><p style="font-size: 10px;">asdaasdasd</p></a>
+                                                        <p style="font-size: 16px;">굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 50px; height: 50px;"><a href="#"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></a></td>
+                                                    <td style="width: 300px; height: 50px;">
+                                                        <a href="#"><p style="font-size: 10px;">asdaasdasd</p></a>
+                                                        <p style="font-size: 16px;">굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 50px; height: 50px;"><a href="#"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></a></td>
+                                                    <td style="width: 300px; height: 50px;">
+                                                        <a href="#"><p style="font-size: 10px;">asdaasdasd</p></a>
+                                                        <p style="font-size: 16px;">굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 50px; height: 50px;"><a href="#"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></a></td>
+                                                    <td style="width: 300px; height: 50px;">
+                                                        <a href="#"><p style="font-size: 10px;">asdaasdasd</p></a>
+                                                        <p style="font-size: 16px;">굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 50px; height: 50px;"><a href="#"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></a></td>
+                                                    <td style="width: 300px; height: 50px;">
+                                                        <a href="#"><p style="font-size: 10px;">asdaasdasd</p></a>
+                                                        <p style="font-size: 16px;">굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 50px; height: 50px;"><a href="#"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></a></td>
+                                                    <td style="width: 300px; height: 50px;">
+                                                        <a href="#"><p style="font-size: 10px;">asdaasdasd</p></a>
+                                                        <p style="font-size: 16px;">굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                         </div>
-                                        <div id="list_comment">
-                                            <tr>
-                                                <th rowspan="2"><img src="https://dummyimage.com/40X40/6d8a85/0011ff.png"></th>
-                                                <th>1</th>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                            </tr>
-                                        </div>
-                                        <div id="list_comment">
-                                            <tr>
-                                                <th rowspan="2"><img src="https://dummyimage.com/40X40/6d8a85/0011ff.png"></th>
-                                                <th>1</th>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                            </tr>
-                                        </div>
-                                        <!-- <div id="list_comment">
-                                            <tr>
-                                                <th rowspan="2"><img src="https://dummyimage.com/40X40/6d8a85/0011ff.png"></th>
-                                                <th>dkdkdk_</th>
-                                            </tr>
-                                            <tr>
-                                                <td>좋아요~</td>
-                                            </tr>
-                                        </div>
-                                        <div id="list_comment">
-                                            <tr>
-                                                <th rowspan="2"><img src="https://dummyimage.com/40X40/6d8a85/0011ff.png"></th>
-                                                <th>dkdkdk_</th>
-                                            </tr>
-                                            <tr>
-                                                <td>좋아요~</td>
-                                            </tr>
-                                        </div>
-                                        <div id="list_comment">
-                                            <tr>
-                                                <th rowspan="2"><img src="https://dummyimage.com/40X40/6d8a85/0011ff.png"></th>
-                                                <th>dkdkdk_</th>
-                                            </tr>
-                                            <tr>
-                                                <td>좋아요~</td>
-                                            </tr>
-                                        </div> -->
-                                    </table>
+                                    </div>
                                     <div id="insert_comment">
-
-                                    </div>    
+                                        <table style="margin-top: 10px;">
+                                            <tr>
+                                                <td style=" width: 50px; height: 48px;"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></td>
+                                                <td style=" width: 260px; height: 48px; line-height: 25px;">
+                                                <p style="font-size: 10px;">dkdkdk_</p>
+                                                <p style="font-size: 14px;"><input type="text" name="insert" placeholder= "댓글을 달아주세요 (20자 이내)" style="width: 240px; height: 25px;"></p>
+                                                </td>
+                                                <td style=" width: 40px; height: 50px;"><button class="button" type="submit"><p style="font-size: 14px;">등록</p></button></a></td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                     <!-- <div class="comment_box">
                                         <input type="button" name="name" value="등록">
                                         <input type="text" name="name" value="" placeholder="리뷰를 남겨주세요.">
