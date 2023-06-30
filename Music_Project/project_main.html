@@ -14,7 +14,6 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
     <style>
         body {
             background-image: linear-gradient(to top, #150050 0%, #000000 100%);
@@ -843,7 +842,6 @@
                                 <p>Demons</p>
                                 <p>Joji
                                     <a href="#">
-                                        <img src="Resource/play.png" width="15px">
                                     </a>
                                 </p>
                             </div>
@@ -856,8 +854,6 @@
                                 <p>Glimpse of Us</p>
                                 <p>Joji
                                     <a href="#">
-                                        <img src="Resource/play.png" width="15px">
-                                    </a>                                </p>
                             </div>
                         </td>
                     </tr>
@@ -868,8 +864,6 @@
                                 <p>Out of Time</p>
                                 <p>The Weekend
                                     <a href="#">
-                                        <img src="Resource/play.png" width="15px">
-                                    </a>                                </p>
                             </div>
                         </td>
                     </tr>
@@ -880,8 +874,6 @@
                                 <p>Psycho, Pt. 2</p>
                                 <p>Russ
                                     <a href="#">
-                                        <img src="Resource/play.png" width="15px">
-                                    </a>                                </p>
                             </div>
                         </td>
                     </tr>
@@ -892,8 +884,6 @@
                                 <p>Low</p>
                                 <p>SZA
                                     <a href="#">
-                                        <img src="Resource/play.png" width="15px">
-                                    </a>                                </p>
                             </div>
                         </td>
                     </tr>
@@ -904,8 +894,6 @@
                                 <p>High Right Now</p>
                                 <p>Tyla Yaweh
                                     <a href="#">
-                                        <img src="Resource/play.png" width="15px">
-                                    </a>                                </p>
                             </div>
                         </td>
                     </tr>
@@ -946,6 +934,8 @@
         import WaveSurfer from 'https://unpkg.com/wavesurfer.js@beta'
         
         var playBtn = document.getElementById("playBtn");
+        var change_btn = document.getElementById("change_btn");
+
 
         const wavesurfer = WaveSurfer.create({
             container: '#waveform',
@@ -977,6 +967,16 @@
         })
 
         wavesurfer.load('Resource/SZA_Kill_Bill.mp3')
+
+        change_btn.onclick = function(){
+            if(change_btn.src.includes("Resource/play.png")) {
+                change_btn.src = "Resource/pause.png";
+            } else {
+                change_btn.src = "Resource/play.png";
+            }
+        }        
+    
+
     </script>
 </body>
 
