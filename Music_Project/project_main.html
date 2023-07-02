@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" crossorigin rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" rel="stylesheet"/>
 
     
     <style>
@@ -99,6 +104,10 @@
             border-radius: 20px;
             transition: 0.6s ease;
         }
+        #nav td:first-child{
+           background-color: aqua;
+           line-height: 24px;
+        }
         #carousel .carousel-inner {
 
             height: 350px;
@@ -150,7 +159,7 @@
 
         /* 아이디 - 프로필 */
         #maincontent #profile #info_profile #id {
-            /* border: 1px solid red; */
+            border: 1px solid red;
             width: 200px;
             height: 30px;
             line-height: 30px;
@@ -521,6 +530,10 @@
             <div id="nav">
                 <table>
                     <tr>
+                        <td>
+                            <input type="text" name="serch"></a>
+                            <button type="submit" name="serch" style="width: 60px; height: 24px; margin-right: 20px;">찾기</button>
+                        </td>
                         <td><a href="#">검색</a></td>
                         <td><a href="#">내 플레이리스트</a></td>
                         <td><a href="#">다운로드</a></td>
@@ -734,6 +747,7 @@
             <div id="tag_profile">
                 <ul>
                     <li><a href="#"><img src="Resource/페이스북.png" width="18px" height="16px"></a></li>
+                    <li><a href="#"><img src="Resource/트위터1.png" width="18px" height="16px"></a></li>
                     <li><a href="#"><img src="Resource/인스타그램1.png" width="18px" height="16px"></a></li>
                     <li><a href="#"><img src="Resource/유튜브2.png" width="18px" height="16px"></a></li>
                 </ul>
@@ -820,6 +834,7 @@
                                 <p>Demons</p>
                                 <p>Joji
                                     <a href="#">
+                                        <img src="Resource/play.png" width="15px" class="change_btn">
                                     </a>
                                 </p>
                             </div>
@@ -832,6 +847,7 @@
                                 <p>Glimpse of Us</p>
                                 <p>Joji
                                     <a href="#">
+                                        <img src="Resource/play.png" width="15px" class="change_btn">
                                     </a>
                                 </p>
                             </div>
@@ -844,6 +860,7 @@
                                 <p>Out of Time</p>
                                 <p>The Weekend
                                     <a href="#">
+                                        <img src="Resource/play.png" width="15px" class="change_btn">
                                     </a>                                
                                 </p>
                             </div>
@@ -856,6 +873,7 @@
                                 <p>Psycho, Pt. 2</p>
                                 <p>Russ
                                     <a href="#">
+                                        <img src="Resource/play.png" width="15px" class="change_btn">
                                     </a>                                
                                 </p>
                             </div>
@@ -868,6 +886,7 @@
                                 <p>Low</p>
                                 <p>SZA
                                     <a href="#">
+                                        <img src="Resource/play.png" width="15px" class="change_btn">
                                     </a>                               
                                  </p>
                             </div>
@@ -880,7 +899,7 @@
                                 <p>High Right Now</p>
                                 <p>Tyla Yaweh
                                     <a href="#">
-                                        <img src="Resource/play.png" width="15px" id="change_btn">
+                                        <img src="Resource/play.png" width="15px" class="change_btn">
                                     </a>                                
                                 </p>
                             </div>
@@ -923,7 +942,8 @@
         import WaveSurfer from 'https://unpkg.com/wavesurfer.js@beta'
         
         var playBtn = document.getElementById("playBtn");
-        var change_btn = document.getElementById("change_btn");
+        var change_btn_list = document.getElementsByClassName("change_btn");
+        var $change_btn_list = $(".change_btn");
 
 
         const wavesurfer = WaveSurfer.create({
@@ -955,12 +975,23 @@
 
         wavesurfer.load('Resource/SZA_Kill_Bill.mp3')
 
+        $change_btn_list.click(function(){
+            // console.log($(this).prop("src"));
+            if($(this).prop("src").includes("Resource/play.png")){
+                $(this).prop("src", "Resource/pause.png");
+            } else {
+                $(this).prop("src", "Resource/play.png");
+            }
+        });
+        
+        change_btn_list.onclick = function(){
             if(change_btn.src.includes("Resource/play.png")) {
                 change_btn.src = "Resource/pause.png";
             } else {
                 change_btn.src = "Resource/play.png";
             }
         }        
+        for 
     </script>
 </body>
 
