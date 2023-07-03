@@ -17,6 +17,7 @@
 
 .header {
     /* background-image: linear-gradient(to top, #150050 0%, #000000 100%); */
+    height: 70px;
     padding: 20px;
     display: flex;
     align-items: center;
