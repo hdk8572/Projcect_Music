@@ -1000,12 +1000,12 @@
             } else {
                 playBtn.src = "Resource/play.png";
             }
-        }
+        };
 
         wavesurfer.on('finish', function() {
             playBtn.src = "Resource/play.png";
             wavesurfer.stop();
-        })
+        });
 
         wavesurfer.load('Resource/SZA_Kill_Bill.mp3')
 
@@ -1018,7 +1018,7 @@
             }
         });
         
-        change_btn_list.onclick = function(){
+        $change_btn_list.onclick = function(){
             if(change_btn.src.includes("Resource/play.png")) {
                 change_btn.src = "Resource/pause.png";
             } else {
