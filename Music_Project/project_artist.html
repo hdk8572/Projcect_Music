@@ -13,7 +13,61 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script>
+        window.onload = loadedHandler;
 
+        // function addlist() {
+        //     let todo = document.getElementById("item");
+        //     let list = document.getElementById("commentlist");
+        //     let listitem = document.createElement("li");
+        //     listitem.innerText = todo.value;
+        //     list.appendChild(listitem);
+
+        //     todo.value = "";
+        //     todo.focus();
+        // }
+
+        function loadedHandler() {
+            $(".btn.btn-primary").on("click", addListHandler);
+            $(".form-control").on("keyup", txtKeyHandler);
+        }
+
+        function addListHandler(e) {
+            var value = $(".form-control").val();
+            $(".commentlist_group").append(
+                `<li>
+                    <div class="result_comment" style="display: flex; height: 50px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div><a href="#" class="profile_album"><img src="https://dummyimage.com/35X35/b5b5b5/e8e8e8.png" style="margin: 7.5px;"></a></div>
+                        <div>
+                            <p style="width: 380px; height: 20px; font-size: 12px; margin-left: 10px;">dkdkdk_</p>
+                            <p style="width: 380px; height: 30px; display: flex; margin-left: 10px;">${value}
+                            </p>
+                        </div>
+                        <button type="button" class="btn btn-remove" style="width: 50px; height: 30px; margin: 10px 0px; padding: 1.5px 3.5px;">삭제</button>
+                    </div>
+                </li>`
+            )
+        }
+        function txtKeyHandler(e) {
+                if(e.keyCode == 13){
+                    var value = $(".form-control").val();
+                    $(".commentlist_group").append(
+                        `<li>
+                            <div class="result_comment" style="display: flex; height: 50px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <div><a href="#" class="profile_album"><img src="https://dummyimage.com/35X35/b5b5b5/e8e8e8.png" style="margin: 7.5px;"></a></div>
+                                <div>
+                                    <p style="width: 380px; height: 20px; font-size: 12px; margin-left: 10px;">dkdkdk_</p>
+                                    <p style="width: 380px; height: 30px; display: flex; margin-left: 10px;">${value}
+                                    </p>
+                                </div>
+                                <button type="button" class="btn btn-remove" style="width: 50px; height: 30px; margin: 10px 0px; padding: 1.5px 3.5px;">삭제</button>
+                            </div>
+                        </li>`
+                )
+            }
+        }
+    </script>
     
     <style>
         body {
@@ -352,43 +406,7 @@
             height: 48px;
             line-height: 48px;
         }
-        .carousel-item #thirdy_comment_album #wrap_comment_box {
-            /* background-color: cadetblue; */
-            padding: 0px 60px;
-            width:490px;
-            height:300px;
-        }
-        .carousel-item #thirdy_comment_album #wrap_comment_box table tr a {
-            text-decoration: none;
-            color: white;
-        }
-
-
-        .carousel-item #thirdy_comment_album #wrap_comment_box #insert_comment {
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        
-        .carousel-item #wrap_comment_box img {
-            display: block;
-            border-radius: 50%;
-            margin: 0 auto;
-        }
-        
-        .carousel-item #wrap_comment_box #list_comment::-webkit-scrollbar {
-            width: 5px;
-        }
-        .carousel-item #wrap_comment_box #list_comment::-webkit-scrollbar-thumb {
-            background: rgba(255,255,255,0.1);
-            border: 0px solid transparent;
-            background-clip: padding-box;
-            border-radius: 10px;
-        }
-
-        .carousel-item #wrap_comment_box #insert_comment {
-            /* background: #f2f2f2; */
-        }
-        .carousel-item #wrap_comment_box #insert_comment input {
+        #thirdy_comment_album .input_group input {
             align-items: center;
             justify-content: center;
             box-sizing: border-box;
@@ -406,7 +424,7 @@
             border: none;
             height: 36px;
         }
-        #insert_comment .button {
+        #thirdy_comment_album .input_group button {
             width: 60px;
             height: 25px;
             background-color: #717171;
@@ -415,6 +433,7 @@
             border-radius: 3px;
             cursor: pointer;
         }
+        
         
         /*  */
         .comment-container {
@@ -676,74 +695,35 @@
                         </div>
                         <div class="carousel-item">
                             <div id="thirdy_comment_album">
-                                <div id="menu_comment">
-                                  <b>댓글</b>
+                                <div id="menu_comment"><b>댓글</b></div>
+                                <div id="list_comment" style="height: 250px; overflow-y: scroll; overflow-x: hidden;">
+                                    <ul id="commentlist" class="commentlist_group" style="height: 50px; list-style-type: none; margin-left: -40px;">
+                                        <!-- list 한명 -->
+                                        <!-- <li>
+                                            <div class="result_comment" style="display: flex; height: 50px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                                <div><a href="#" class="profile_album"><img src="https://dummyimage.com/35X35/b5b5b5/e8e8e8.png" style="margin: 7.5px;"></a></div>
+                                                <div>
+                                                    <p style="width: 380px; height: 20px; font-size: 12px; margin-left: 10px;">dkdkdk_</p>
+                                                    <p style="width: 380px; height: 30px; display: flex; margin-left: 10px;">dd
+                                                        
+                                                    </p>
+                                                    
+                                                </div>
+                                                <button type="button" class="btn btn-remove" style="width: 50px; height: 30px; margin: 10px 0px; padding: 1.5px 3.5px;">삭제</button>
+                                            </div>
+                                        </li> -->
+                                        <!-- 끝 -->
+                                    </ul>
                                 </div>
-                                <div id="wrap_comment_box">
-                                    <div id="list_comment" style="height: 210px; overflow-y: scroll;">
-                                        <div id="scroll_list_comment">
-                                            <table style="height: 250px; overflow-y: scroll;">
-                                                <tr>
-                                                    <td style="width: 50px; height: 50px;"><a href="#"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></a></td>
-                                                    <td style="width: 300px; height: 50px;">
-                                                        <a href="#"><p style="font-size: 10px;">asdaasdasd</p></a>
-                                                        <p style="font-size: 16px;">굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿</p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 50px; height: 50px;"><a href="#"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></a></td>
-                                                    <td style="width: 300px; height: 50px;">
-                                                        <a href="#"><p style="font-size: 10px;">asdaasdasd</p></a>
-                                                        <p style="font-size: 16px;">굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿</p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 50px; height: 50px;"><a href="#"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></a></td>
-                                                    <td style="width: 300px; height: 50px;">
-                                                        <a href="#"><p style="font-size: 10px;">asdaasdasd</p></a>
-                                                        <p style="font-size: 16px;">굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿</p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 50px; height: 50px;"><a href="#"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></a></td>
-                                                    <td style="width: 300px; height: 50px;">
-                                                        <a href="#"><p style="font-size: 10px;">asdaasdasd</p></a>
-                                                        <p style="font-size: 16px;">굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿</p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 50px; height: 50px;"><a href="#"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></a></td>
-                                                    <td style="width: 300px; height: 50px;">
-                                                        <a href="#"><p style="font-size: 10px;">asdaasdasd</p></a>
-                                                        <p style="font-size: 16px;">굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿</p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 50px; height: 50px;"><a href="#"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></a></td>
-                                                    <td style="width: 300px; height: 50px;">
-                                                        <a href="#"><p style="font-size: 10px;">asdaasdasd</p></a>
-                                                        <p style="font-size: 16px;">굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿굿</p>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
+                                <div class="input_group" style="display: flex; height: 50px;">
+                                    <div><a href="#" class="profile_album"><img src="https://dummyimage.com/35X35/b5b5b5/e8e8e8.png" style="margin: 7.5px;"></a></div>
+                                    <div>
+                                        <p style="width: 440px; height: 20px; font-size: 12px; margin-left: 10px;">dkdkdk_</p>
+                                        <p style="width: 440px; height: 30px; display: flex;">
+                                            <input id="item" class="form-control" type="text" placeholder="내용을 적어주세요 (25자 이내)" maxlength="25" style="width: 350px; height: 30px;">
+                                            <button type="button" class="btn btn-primary" style="width: 50px; height: 30px; line-height: 10px; margin-left: 20px; padding: 1.5px 2.5px;">등록</button>
+                                        </p>
                                     </div>
-                                    <div id="insert_comment">
-                                        <table style="margin-top: 10px;">
-                                            <tr>
-                                                <td style=" width: 50px; height: 48px;"><img src="https://dummyimage.com/50x50/c2c2c2/0011ff.png"></td>
-                                                <td style=" width: 260px; height: 48px; line-height: 25px;">
-                                                <p style="font-size: 10px;">dkdkdk_</p>
-                                                <p style="font-size: 14px;"><input type="text" name="insert" placeholder= "댓글을 달아주세요 (20자 이내)" style="width: 240px; height: 25px;"></p>
-                                                </td>
-                                                <td style=" width: 40px; height: 50px;"><button class="button" type="submit"><p style="font-size: 14px;">등록</p></button></a></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <!-- <div class="comment_box">
-                                        <input type="button" name="name" value="등록">
-                                        <input type="text" name="name" value="" placeholder="리뷰를 남겨주세요.">
-                                    </div> -->
                                 </div>
                             </div>
                             <div id="cover_album"><img class="d-block w-100" src="Resource/sza_album_1.jpg"
