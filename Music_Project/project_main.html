@@ -38,8 +38,9 @@
 
         <images>
             <div class="image-wrapper">
-                <div class="image">
-                    <a href="/Music_Project/project_artist.html"><img src="Resource/banner1.jpg"  alt="이미지1">
+                 <div class="image">
+                    <a href="/Music_Project/project_artist.html">
+                    <img src="Resource/banner1.jpg"  alt="이미지1">
                         <div class="image-caption">SOS</div>
                     </a>
                 </div>
@@ -69,5 +70,11 @@
         </images>
     </div>
 </div>
+<script>
+    function playAudio(audioId) {
+      var audio = document.getElementById(audioId);
+      audio.play();
+    }
+  </script>
 </body>
 </html>
