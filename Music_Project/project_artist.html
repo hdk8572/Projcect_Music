@@ -27,14 +27,19 @@
             var value = $(".form-control").val();
             $(".commentlist_group").append(
                 `<li>
-                    <div class="result_comment" style="display: flex; height: 50px; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                        <div><a href="#" class="profile_album"><img src="https://dummyimage.com/35X35/b5b5b5/e8e8e8.png" style="margin: 7.5px;"></a></div>
+                    <div class="result_comment" style="display: flex; 
+                    height: 50px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div><a href="#" class="profile_album">
+                        <img src="https://dummyimage.com/35X35/b5b5b5/e8e8e8.png" style="margin: 7.5px;"></a></div>
                         <div>
                             <p style="width: 380px; height: 20px; font-size: 12px; margin-left: 10px;">dkdkdk_</p>
                             <p style="width: 380px; height: 30px; display: flex; margin-left: 10px;">${value}
                             </p>
                         </div>
-                        <a href="#"><button type="button" class="btn btn-remove" onclick="removeListHandler(this);" style="height: 30px; margin: 10px 0px; padding: 1.5px 3.5px;"><i class="fa-solid fa-trash-can"></i></button></a>
+                        <a href="#"><button type="button" class="btn btn-remove" onclick="removeListHandler(this);"
+                           style="height: 30px; margin: 10px 0px; padding: 1.5px 3.5px;">
+                           <i class="fa-solid fa-trash-can"></i></button>
+                        </a>
                     </div>
                 </li>`
             )
@@ -716,7 +721,7 @@
                                 <div id="list_comment" style="height: 250px; overflow-y: scroll; overflow-x: hidden;">
                                     <ul id="commentlist" class="commentlist_group" style="height: 50px; list-style-type: none; margin-left: -40px;">
                                         <!-- list 한명 -->
-                                        <li>
+                                        <!-- <li>
                                             <div class="result_comment" style="display: flex; height: 50px; border-bottom: 1px solid rgba(255,255,255,0.1);">
                                                 <div><a href="#" class="profile_album"><img src="https://dummyimage.com/35X35/b5b5b5/e8e8e8.png" style="margin: 7.5px;"></a></div>
                                                 <div>
@@ -726,7 +731,7 @@
                                                 </div>
                                                 <a href="#"><button type="button" class="btn btn-remove" onclick="removeListHandler(this);" style="height: 30px; margin: 10px 0px; padding: 1.5px 3.5px;"><i class="fa-solid fa-trash-can"></i></button></a>
                                             </div>
-                                        </li>
+                                        </li> -->
                                         <!-- 끝 -->
                                     </ul>
                                 </div>
